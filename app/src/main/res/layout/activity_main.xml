@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#0a0a0d">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Poco Monitor"
+        android:textColor="#e4e2dd"
+        android:textSize="22sp"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="URL del servidor"
+        android:textColor="#8a8892"
+        android:textSize="12sp" />
+    <EditText
+        android:id="@+id/edit_server_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="https://poco-status.fly.dev"
+        android:textColorHint="#555"
+        android:textColor="#e4e2dd"
+        android:inputType="textUri"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Token"
+        android:textColor="#8a8892"
+        android:textSize="12sp" />
+    <EditText
+        android:id="@+id/edit_token"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="el mismo REPORT_TOKEN del backend"
+        android:textColorHint="#555"
+        android:textColor="#e4e2dd"
+        android:inputType="textPassword"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Intervalo de reporte (segundos)"
+        android:textColor="#8a8892"
+        android:textSize="12sp" />
+    <EditText
+        android:id="@+id/edit_interval"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="3"
+        android:textColorHint="#555"
+        android:textColor="#e4e2dd"
+        android:inputType="number"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Iniciar monitoreo" />
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Detener" />
+
+    <TextView
+        android:id="@+id/text_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="#6fae9c"
+        android:textSize="13sp" />
+
+</LinearLayout>

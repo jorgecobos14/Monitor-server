@@ -1,0 +1,8 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.PocoMonitor" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#6fae9c</item>
+        <item name="colorPrimaryDark">#0a0a0d</item>
+        <item name="colorAccent">#6fae9c</item>
+        <item name="android:windowBackground">#0a0a0d</item>
+    </style>
+</resources>
