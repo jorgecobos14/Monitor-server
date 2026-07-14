@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
             )
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 perms.add(Manifest.permission.POST_NOTIFICATIONS)
+                perms.add(Manifest.permission.NEARBY_WIFI_DEVICES)
             }
             return perms.toTypedArray()
         }

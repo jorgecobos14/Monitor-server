@@ -85,7 +85,11 @@ class MetricsCollector(private val ctx: Context) {
         if (wifiConnected) {
             val info = wm.connectionInfo
             val hasLocationPerm = ContextCompat.checkSelfPermission(ctx, android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
-            j.put("wifi_ssid", if (hasLocationPerm) info.ssid?.trim('"') else "sin permiso")
+            val hasNearbyWifiPerm = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                ContextCompat.checkSelfPermission(ctx, android.Manifest.permission.NEARBY_WIFI_DEVICES) == PackageManager.PERMISSION_GRANTED
+            } else true
+            val canReadSsid = hasLocationPerm && hasNearbyWifiPerm
+            j.put("wifi_ssid", if (canReadSsid) info.ssid?.trim('"') else "sin permiso")
             j.put("wifi_rssi", info.rssi)
             j.put("wifi_link_speed", info.linkSpeed)
             j.put("ip_local", intToIp(info.ipAddress))
