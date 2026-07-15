@@ -51,7 +51,7 @@ class MonitorService : Service() {
         job = scope.launch {
             val serverUrl = prefs.getString("server_url", "") ?: ""
             val token = prefs.getString("token", "") ?: ""
-            val intervalSec = prefs.getInt("interval_sec", 3).coerceAtLeast(2)
+            val intervalSec = prefs.getInt("interval_sec", 3).coerceAtLeast(0)
 
             while (isActive) {
                 try {
